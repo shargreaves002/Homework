@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Permutation perm = new Permutation(arr);
         perm.printPermutn();
-        System.out.println(findTarget(array, 0));
+        System.out.println(findTarget(array, 11));
         strings.add("abc");
         strings.add("bcd");
         strings.add("bbb");
@@ -20,8 +20,8 @@ public class Main {
         strings.add("eeee");
 
         System.out.println(new ArrayList<String>(groupString(strings)).toString());
-
-        System.out.println(Calc.eval("7-8"));
+        Calc calc = new Calc();
+        System.out.println(calc.parse("7 + 85 - 2"));
     }
 
     private static int findTarget(int[] arr, int target) {
