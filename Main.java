@@ -25,11 +25,21 @@ public class Main {
     }
 
     private static int findTarget(int[] arr, int target) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == target) {
-                return i;
+        int start = 0;
+        int last = arr.length - 1;
+        int mid = 0;
+
+        while (start <= last) {
+            mid = (start + last) / 2;
+            if (arr[mid] < target) {
+                start = mid + 1;
+            } else if (arr[mid] > target) {
+                last = mid - 1;
+            } else {
+                return mid;
             }
         }
+
         return -1;
     }
 
